@@ -22,6 +22,8 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+# Integrate facebook login
+gem 'omniauth-facebook'
 # Use figaro gem for security
 gem "figaro"
 # Use clearance GEM

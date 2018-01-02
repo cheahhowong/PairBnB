@@ -47,7 +47,15 @@
             <li><a href="#">Separated link</a></li>
           </ul>
         </li>
+        <li>
+          <% if signed_in? -%>
+            <%= link_to t(".sign_out"),sign_out_path, method: :delete %>
+          <% else -%>
+            <%= link_to t(".sign_in"), sign_in_path %>
+          <% end -%>
+        </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
