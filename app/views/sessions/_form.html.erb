@@ -1,23 +1,33 @@
 <%= form_for :session, url: session_path do |form| %>
-  <div class="text-field">
-    <%= form.label :email %>
-    <%= form.text_field :email, type: 'email' %>
+  
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-envelope"></span></span>
+    <%= form.text_field :email, placeholder: 'Email', class:"form-control"%>
   </div>
 
-  <div class="password-field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-eye-close"></span></span>
+    <%= form.password_field :password, placeholder: 'Password', class:"form-control" %>
   </div>
-
-  <div class="submit-field">
-    <%= form.submit %>
-  </div>
+  </br>
 
   <div class="other-links">
-    <% if Clearance.configuration.allow_sign_up? %>
-      <%= link_to t(".sign_up"), sign_up_path %>
-    <% end %>
-    <%= link_to t(".forgot_password"), new_password_path %>
-    <%= link_to "Sign in with Facebook", "/auth/facebook" %>
+    <div>
+      <%= link_to t(".forgot_password"), new_password_path %>
+    </div>
   </div>
+
+  <div class="modal-footer">
+    <div>
+      <% if Clearance.configuration.allow_sign_up? %>
+        <span class="text-center">Don't have an account? </span><a href="#" data-toggle="modal" data-target="#signUpModal" data-dismiss="modal">Sign Up</a>
+      <% end %>
+    </div>
+    </br>
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    <%= form.submit placeholder: "Confirm", class:"btn btn-primary" %>
+  </div>
+
 <% end %>
+
+

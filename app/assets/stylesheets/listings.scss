@@ -1,3 +1,56 @@
-// Place all the styles related to the Listings controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#listing_profile{
+	display:flex;
+	justify-content: space-between;
+}
+
+#listingImage img{
+	width: 100%;
+	height: 320px;
+}
+
+#listing_profile_left{
+	min-height: 500px;
+	min-width: 700px;
+}
+
+#listing_profile_right{
+	border: 1px solid gray;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	height: 450px;
+	min-width: 300px;
+}
+
+.button{
+	background-color: red;
+	color:white;
+	border:2px;
+	border-color: red;
+	width:274px;
+	padding: 12px 24px;
+	border-radius: 5px;
+}
+
+#listing_userprofile{
+	display: flex;
+	justify-content: space-between;
+}
+
+#listing_userprofile img{
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+}
+
+#footerSocialLink{
+	display: flex;
+	justify-content: space-around;
+
+}
+
+.create_listing_form{
+	display: flex;
+	justify-content: center;
+}

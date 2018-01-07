@@ -1,0 +1,65 @@
+#user_profile{
+	display: flex;
+	justify-content: space-between;
+}
+
+#user_profile_left{
+	border: 1px solid gray;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	min-height: 450px;
+	min-width: 300px;
+}
+
+#user_profile_right{
+	min-height: 500px;
+	min-width: 700px;
+}
+
+#user_profile_left img{
+	width: 240px;
+	height: 240px;
+}
+
+.user_profile_left_header{
+	width: 240px;
+	color: #484848;
+	border: 1px solid #dce0e0;
+	background-color: #edefed;
+	padding-left: 33px;
+	padding-top: 10px;
+}
+
+.user_profile_verification_info{
+	width: 240px;
+	color: #484848;
+	border: 1px solid #dce0e0;
+	display: flex;
+	justify-content: space-around;
+}
+
+.user_profile_verification_info ul{
+	padding: 0;
+	padding: 10px 10px;
+	margin-bottom: 0;
+}
+
+.user_profile_verification_info li{
+	list-style: none;
+}
+
+.user_profile_header{
+	color: black;
+	font-weight: bold;
+}
+
+#user_profile_listings_thumbnail{
+	width:285.25px;
+	height: 200px;
+}
+
+.reservation_delete_button {
+	color: red;
+}

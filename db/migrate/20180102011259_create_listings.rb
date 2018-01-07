@@ -2,11 +2,11 @@ class CreateListings < ActiveRecord::Migration[5.0]
   def change
     create_table :listings do |t|
     	t.string:name
-    	t.string:place_type
+    	t.integer:place_type
     	t.string:property_type
-    	t.integer:room_num
-    	t.integer:bed_num
-    	t.integer:guest_num
+    	t.integer:room_number
+    	t.integer:bed_number
+    	t.integer:guest_number
     	t.string:country
     	t.string:state
     	t.string:city

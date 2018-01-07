@@ -1,3 +1,83 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+@import '*';
+/**= require 'bootstrap-datepicker3'*/
 
+.logo{
+	height: 50px;
+}
+
+.navbar {
+	padding-bottom: 5px;
+	border-bottom-color: gray;
+}
+
+#navbar_logo_link{
+	padding: 0;
+}
+
+.thumbnail img{
+	width:285.25px;
+	height: 190.16px;
+}
+
+.thumbnail{
+	width:285.25px;
+	height: 300px;
+	border-color: #fff;
+}
+
+.thumbnail h4{
+	color:#337ab7;
+}
+
+.listingstyle{
+	display: inline-block;
+}
+
+.container{
+	width:1190px;
+}
+
+#paginate{
+	margin: 0 auto;
+	width: 250px; 
+}
+
+.caption h4, h5{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.glyphicon glyphicon-search{
+	height: 30px;
+}
+
+.other-links{
+	display: flex;
+	flex-direction: column;
+}
+
+.facebookStyle{
+	color:white;
+	text-decoration: none;
+	padding-left: 10px;
+}
+
+.facebookStyle:hover { 
+  	color: white;
+}
+
+#footer {
+	display:flex;
+	justify-content: space-around;
+}
+
+.footerdivlist li{
+	list-style: none;
+}
+
+#footerSocialLink{
+	display: flex;
+	justify-content: space-between;
+}
