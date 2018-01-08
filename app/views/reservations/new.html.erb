@@ -15,7 +15,7 @@
     <div>
       <h3>Start Date</h3>
       <div class="input-group date">
-        <input type="text" name="start_date" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+        <%= form.text_field :start_date, placeholder: 'Start Date', class:"form-control", data:{provide:"datepicker"}%>
       </div>
     </div>
   </div>
@@ -23,7 +23,7 @@
   <div class="create_listing_form">
     <div>
       <h3>End Date</h3>
-      <input type="text" class="form-control" data-provide="datepicker">
+      <%= form.text_field :end_date, placeholder: 'End Date', class:"form-control", data:{provide:"datepicker"}%>
     </div>
   </div>
 
@@ -42,8 +42,6 @@
     <%= form.submit "Confirm", class: "btn btn-primary" %>
     </div>
   </div>
-
-
 
 <% end %>
 

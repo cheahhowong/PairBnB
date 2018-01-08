@@ -100,7 +100,6 @@
 		</div>
 		<div>
 			<h2>Reservation(<%= @booking.count %>)</h2>
-			<% @booking.each do |t| %>
 			<div class="row">
 				<table class="table table-hover">
 				    <thead>
@@ -111,21 +110,25 @@
 				        <th>Action</th>
 				        <th>Title</th>
 				        <th>Price</th>
+				        <th>Status</th>
 				      </tr>
 				    </thead>
+			<% @booking.each do |t| %>
 				    <tbody>
 				      <tr>
-				        <td><%= t.start_date.strftime('%d %B %Y') %></td>
-				        <td><%= t.end_date.strftime('%d %B %Y') %></td>
+				        <td><%= t.start_date.strftime('%d %b %Y') %></td>
+				        <td><%= t.end_date.strftime('%d %b %Y') %></td>
 				        <td><%= t.num_guests %></td>
 				        <td><%= link_to "Delete", reservation_path(t.id),method: :delete, class:"reservation_delete_button" %></td>
 				        <td><%= t.listing.name %></td>
 				        <td><%= t.total_price %></td>
+				        <td><%= link_to "Pay", braintree_new_path %></td>
 				      </tr>
-				    </tbody>
+				      </tbody>
+			<% end %>
+				    
   				</table>
 			</div>
-			<% end %>
 		</div>
 	</div>
 </div>
