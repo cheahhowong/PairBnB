@@ -24,6 +24,8 @@ gem 'uglifier', '>= 1.3.0'
 
 gem "letter_opener", :group => :development
 
+gem 'sidekiq'
+
 #Payment (braintree)
 gem 'braintree'
 # Integrate facebook login
