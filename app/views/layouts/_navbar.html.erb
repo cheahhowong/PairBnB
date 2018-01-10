@@ -31,7 +31,7 @@
         <% if signed_in? %>
         <li><%= link_to 'Sign out', sign_out_path, method: :delete %></li>
           <% if current_user.photos == [] %>
-            <li><a id="navbar_logo_link" href="/users/<%=current_user.id%>/show"><%= image_tag("emptyprofileimage.jpeg",class:"logo")%></li>
+            <li><a id="navbar_logo_link" href="/users/<%=current_user.id%>/show"><%= image_tag("emptyprofileimage.jpg",class:"logo")%></li>
           <% else %>
             <li><a id="navbar_logo_link" href="/users/<%=current_user.id%>/show"><%= image_tag current_user.photos.first ,class:"logo"%></li>
           <% end %>

@@ -3,7 +3,7 @@
 
 <div id="listingImage">
 	<% if @listing.photos == []  %>
-		<%= image_tag ("emptyprofileimage.jpeg") %>	
+		<%= image_tag ("emptyprofileimage.jpg") %>	
 	<% else %>
 		<%= image_tag @listing.photos.first %>
 	<% end %>
@@ -28,7 +28,7 @@
 			</div>
 			<div>
 				<% if @user.photos == []  %>
-					<a href="/users/<%= @listing.user_id %>/show"><%= image_tag ("emptyprofileimage.jpeg") %></a>	
+					<a href="/users/<%= @listing.user_id %>/show"><%= image_tag ("emptyprofileimage.jpg") %></a>	
 				<% else %>
 					<a href="/users/<%= @listing.user_id %>/show"><%= image_tag @user.photos.first %></a>
 				<% end %>
@@ -40,7 +40,7 @@
 	<div id='listing_profile_right'>
 		<div>
 			<% if @user.photos == []  %>
-				<%= image_tag ("emptyprofileimage.jpeg"), class: "listing_profile_right_picture" %>	
+				<%= image_tag ("emptyprofileimage.jpg"), class: "listing_profile_right_picture" %>	
 			<% else %>
 				<%= image_tag @user.photos.first %>
 			<% end %>
