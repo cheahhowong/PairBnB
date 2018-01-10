@@ -15,6 +15,7 @@ module Pairbnb
     # and follow the adapter's specific installation
     # and deployment instructions.
     config.active_job.queue_adapter = :sidekiq
+    config.action_mailer.default_url_options = { host: 'localhost:3000' }
   end
 end
 

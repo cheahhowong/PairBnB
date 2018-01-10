@@ -30,5 +30,15 @@ root 'users#index'
   get "/auth/:provider/callback" => "sessions#create_from_omniauth"
   
   post 'braintree/checkout'
+
+  # resources :reservations do
+  #   member do
+  #     get 'braintree/new'
+  #     post 'braintree/create'
+  #   end
+  # end
   
+  get "/listings/:listing_id/reservations/:id" => "braintree#new", as: "braintree_new_reservation_listing"
+  post "/listings/:listing_id/reservations/:id" => "braintree#checkout", as: "braintree_checkout_reservation_listing"
+
 end

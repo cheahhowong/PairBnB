@@ -30,7 +30,11 @@
 
         <% if signed_in? %>
         <li><%= link_to 'Sign out', sign_out_path, method: :delete %></li>
-        <li><a id="navbar_logo_link" href="/users/<%=current_user.id%>/show"><%= image_tag("cheahhow-pairbnb_720.png",class:"logo")%></li>
+          <% if current_user.photos == [] %>
+            <li><a id="navbar_logo_link" href="/users/<%=current_user.id%>/show"><%= image_tag("emptyprofileimage.jpeg",class:"logo")%></li>
+          <% else %>
+            <li><a id="navbar_logo_link" href="/users/<%=current_user.id%>/show"><%= image_tag current_user.photos.first ,class:"logo"%></li>
+          <% end %>
         <% else %>
         <li><a href="#" data-toggle="modal" data-target="#signUpModal">Sign Up</a></li>
         <li><a href="#" data-toggle="modal" data-target="#logInModal">Log In</a></li>
