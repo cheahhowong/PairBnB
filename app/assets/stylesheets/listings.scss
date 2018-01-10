@@ -10,7 +10,7 @@
 
 #listing_profile_left{
 	min-height: 500px;
-	min-width: 700px;
+	width: 700px;
 }
 
 #listing_profile_right{
@@ -21,6 +21,15 @@
 	padding-bottom: 20px;
 	height: 450px;
 	min-width: 300px;
+}
+
+.fixed_profile_right{
+	align-self: center;
+}
+
+.listing_profile_right_picture{
+	width: 283px;
+	height: 300px; 
 }
 
 .button{
@@ -53,4 +62,11 @@
 .create_listing_form{
 	display: flex;
 	justify-content: center;
+}
+
+.formImg{
+	background: url(formbackgroundimage.jpeg);
+	background-size: 1190px 1310.6px;
+	min-height: 1310.6px;
+	min-width: 1190px;
 }

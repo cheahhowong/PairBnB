@@ -2,7 +2,11 @@
 
 
 <div id="listingImage">
-	<%= image_tag @listing.photos.first %>
+	<% if @listing.photos == []  %>
+		<%= image_tag ("emptyprofileimage.jpeg") %>	
+	<% else %>
+		<%= image_tag @listing.photos.first %>
+	<% end %>
 </div>
 </br>
 
@@ -23,7 +27,11 @@
 				<% end %>
 			</div>
 			<div>
-				<a href="/users/<%= @listing.user_id %>/show"><%= image_tag @user.photos.first %></a>
+				<% if @user.photos == []  %>
+					<a href="/users/<%= @listing.user_id %>/show"><%= image_tag ("emptyprofileimage.jpeg") %></a>	
+				<% else %>
+					<a href="/users/<%= @listing.user_id %>/show"><%= image_tag @user.photos.first %></a>
+				<% end %>
 			</div>
 				
 		</div>
@@ -31,9 +39,12 @@
 
 	<div id='listing_profile_right'>
 		<div>
+			<% if @user.photos == []  %>
+				<%= image_tag ("emptyprofileimage.jpeg"), class: "listing_profile_right_picture" %>	
+			<% else %>
+				<%= image_tag @user.photos.first %>
+			<% end %>
 			<h4>RM <%= @listing.price%> per night</h4>
-			<h5>Dates</h5>
-			<h5>Guests</h5>
 			<div>
 				<%= button_to "Book", "/listings/#{@listing.id}/reservations/new", :method => "get", class: "button" %>
 			</div>

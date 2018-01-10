@@ -13,7 +13,7 @@ class ReservationsController < ApplicationController
 			@listing = Listing.where(user_id: @user.id)
 			@booking = @user.reservations
 			@reservation = Reservation.where(user_id: @user.id)
-			render "users/show" 
+			render 'users/show'
 		else
 			p @new_reservation.errors
 			flash[:error] = "Date chosen is booked!"

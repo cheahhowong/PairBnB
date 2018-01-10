@@ -3,7 +3,12 @@
 <div id="user_profile" class="container">
 	<div id="user_profile_left">
 		<div>
-
+		
+		<% if @user.photos == [] %>
+			<div>
+				<%= image_tag ("emptyprofileimage.jpeg") %>		
+			</div>
+		<% else %>
 			<div id="myCarousel" class="carousel slide" data-ride="carousel">
 				  <!-- Indicators -->
 				  <ol class="carousel-indicators">
@@ -13,19 +18,19 @@
 				  </ol>
 
 				  <!-- Wrapper for slides -->
-				  <div class="carousel-inner">
-				    <div class="item active">
-				      <%= image_tag @user.photos.first %>
-				    </div>
+					<div class="carousel-inner">
+					  <div class="item active">
+					    <%= image_tag @user.photos.first %>
+					  </div>
 
-				    <div class="item">
-				      <%= image_tag @user.photos.second %>
-				    </div>
+					  <div class="item">
+					    <%= image_tag @user.photos.second %>
+					  </div>
 
-				    <div class="item">
-				      <%= image_tag @user.photos.third %>
-				    </div>
-				  </div>
+					  <div class="item">
+					    <%= image_tag @user.photos.third %>
+					  </div>
+					</div>
 
 				  <!-- Left and right controls -->
 				  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
@@ -37,6 +42,8 @@
 				    <span class="sr-only">Next</span>
 				  </a>
 				</div>
+		<% end %>
+
 		</div>
 		</br>
 
@@ -122,7 +129,11 @@
 				        <td><%= link_to "Delete", reservation_path(t.id),method: :delete, class:"reservation_delete_button" %></td>
 				        <td><%= t.listing.name %></td>
 				        <td><%= t.total_price %></td>
-				        <td><%= link_to "Pay", braintree_new_path %></td>
+				        <% if t.unpaid? %>
+				        	<td><%= link_to "Pay", braintree_new_reservation_listing_path(t.listing_id,t.id), 'data-turbolinks' => false %></td>
+				        <% else %>
+				        	<td>Paid</td>
+				        <% end %>
 				      </tr>
 				      </tbody>
 			<% end %>
