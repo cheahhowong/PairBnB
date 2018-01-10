@@ -7,9 +7,14 @@ class UsersController < Clearance::UsersController
 	end
 
 	def create
+		byebug
 		@listing = Listing.order(updated_at: :desc).page params[:page]
 		@user = User.new(user_params)
-		@user.save
+		if @user.save
+			UserMailer.welcome_email(@user).deliver_now
+		else
+
+		end
 		render 'layouts/homepage'
 	end
 

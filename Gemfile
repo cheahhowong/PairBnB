@@ -22,6 +22,10 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+gem "letter_opener", :group => :development
+
+#Payment (braintree)
+gem 'braintree'
 # Integrate facebook login
 gem 'omniauth-facebook'
 # Use figaro gem for security
