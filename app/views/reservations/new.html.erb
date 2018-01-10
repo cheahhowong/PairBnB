@@ -1,0 +1,54 @@
+<%= render partial: "/layouts/navbar" %>
+
+<div class="container">
+
+<%= form_for @reservation, url: reservations_path do |form| %>
+  
+  <div class="create_listing_form">
+    <div>
+      <h3>Number of Guests</h3>
+      <%= form.number_field :num_guests, placeholder: 'Number of Guests'%>
+    </div>
+  </div>
+
+  <div class="create_listing_form">
+    <div>
+      <h3>Start Date</h3>
+      <div class="input-group date">
+        <input type="text" name="start_date" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+      </div>
+    </div>
+  </div>
+  
+  <div class="create_listing_form">
+    <div>
+      <h3>End Date</h3>
+      <input type="text" class="form-control" data-provide="datepicker">
+    </div>
+  </div>
+
+  <div class="create_listing_form">
+    <div>
+      <h3 id="duplicateDateError"><%= flash[:error] %></h3>
+      </div>
+  </div>
+  </br>
+
+  <%= form.hidden_field :user_id ,value: current_user.id %>
+  <%= form.hidden_field :listing_id ,value: @listing.id %>
+
+  <div class="create_listing_form">
+    <div>
+    <%= form.submit "Confirm", class: "btn btn-primary" %>
+    </div>
+  </div>
+
+
+
+<% end %>
+
+</div>
+
+<%= render partial: "/layouts/footer" %>
+
+    

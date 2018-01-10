@@ -1,0 +1,45 @@
+<%= render partial: "/layouts/navbar" %>
+
+
+<div id="listingImage">
+	<%= image_tag @listing.photos.first %>
+</div>
+</br>
+
+<div id='listing_profile' class='container'>
+	<div id='listing_profile_left'>
+		<div>
+			<h5><a href="#">Overview </a> · <a href="#">Reviews</a> · <a href="#">The Host</a> · <a href="#">Location</a> </h5>
+		</div>
+		<div id="listing_userprofile">
+			<div>
+				<h1><%= @listing.name%></h1>
+				<h5><%= @listing.property_type%></h5>
+				<h5><%= @listing.guest_number%> guests · <%= @listing.room_number%> bedrooms · <%= @listing.bed_number %> beds</h5>
+				<h5><%= @listing.description%></h5>
+				<% if current_user.id == @user.id %>
+					<%= link_to "Edit Listing", edit_listing_path %>
+					<%= link_to "Delete Listing", listing_path(@listing.id), method: :delete, data:{confirm: "Are You Confirm to Delete??"} %>
+				<% end %>
+			</div>
+			<div>
+				<a href="/users/<%= @listing.user_id %>/show"><%= image_tag @user.photos.first %></a>
+			</div>
+				
+		</div>
+	</div>
+
+	<div id='listing_profile_right'>
+		<div>
+			<h4>RM <%= @listing.price%> per night</h4>
+			<h5>Dates</h5>
+			<h5>Guests</h5>
+			<div>
+				<%= button_to "Book", "/listings/#{@listing.id}/reservations/new", :method => "get", class: "button" %>
+			</div>
+		</div>
+	</div>
+</div>
+
+<%= render partial: "/layouts/footer" %>
+
