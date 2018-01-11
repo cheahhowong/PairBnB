@@ -22,14 +22,13 @@ class BraintreeController < ApplicationController
 	      	:submit_for_settlement => true
 	    	}
 	   	)
-	  	byebug
+	  	
 	  	if result.success?
 	  		@user=User.find(current_user.id)
 	  		@listing=Listing.where(user_id: @user.id)
 	  		@booking = @user.reservations
 			@reservation = Reservation.where(user_id: @user.id )
 	  		@paymentstatus = Reservation.find_by(id: params[:id])
-	  		byebug
 	  		@paymentstatus.update(status: "paid")
 	    	render 'users/show', :flash => { :success => "Transaction successful!" }
 	    	
