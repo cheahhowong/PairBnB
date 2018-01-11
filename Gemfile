@@ -40,6 +40,7 @@ gem 'clearance'
 gem 'kaminari'
 # Use to upload photo
 gem 'carrierwave', '~> 1.0'
+gem 'fog'
 gem 'mini_magick'
 # Datepicker
 gem 'bootstrap-datepicker-rails'
