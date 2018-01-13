@@ -36,6 +36,8 @@ class ListingsController < ApplicationController
 		redirect_to user_show_path(@user.id)
 	end
 
+	
+
 	private
 
 	def show_listing_params

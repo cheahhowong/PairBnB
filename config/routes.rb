@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   get 'braintree/new'
 
+  get "/listings/search" => "listings#search", as: "listings_search"
+
 root 'users#index'
 
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
@@ -40,5 +42,7 @@ root 'users#index'
   
   get "/listings/:listing_id/reservations/:id" => "braintree#new", as: "braintree_new_reservation_listing"
   post "/listings/:listing_id/reservations/:id" => "braintree#checkout", as: "braintree_checkout_reservation_listing"
+
+  
 
 end
