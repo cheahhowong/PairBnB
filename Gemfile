@@ -26,6 +26,8 @@ gem "letter_opener", :group => :development
 
 gem 'sidekiq'
 
+gem 'rest-client'
+
 #Payment (braintree)
 gem 'braintree'
 # Integrate facebook login

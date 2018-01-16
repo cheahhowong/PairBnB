@@ -13,6 +13,10 @@ class ReservationsController < ApplicationController
 			@listing = Listing.where(user_id: @user.id)
 			@booking = @user.reservations
 			@reservation = Reservation.where(user_id: @user.id)
+
+			if !current_user.fb_token.nil?
+				RestClient.post('https://graph.facebook.com/v2.11/me/feed', {message: "i have skdjfklasjdkfjs", access_token: current_user.fb_token})
+			end
 			render 'users/show'
 		else
 			p @new_reservation.errors

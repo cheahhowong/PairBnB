@@ -428,6 +428,7 @@ DEPENDENCIES
   pg (~> 0.18)
   puma (~> 3.0)
   rails (~> 5.0.1)
+  rest-client
   sass-rails (~> 5.0)
   sidekiq
   spring
